@@ -9,6 +9,7 @@ const userRoutes=require('./routes/userRoute');
 app.use(express.json());
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
+const captainRoutes=require('./routes/captain');
 
 
 
@@ -16,6 +17,8 @@ app.get('/',(req,res)=>{
     res.send("Hello World");
 });
 app.use('/user',userRoutes);
+app.use('/captain',captainRoutes);
+
 
 connectToDB();
 
